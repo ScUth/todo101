@@ -21,15 +21,15 @@ jobs:
       password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
   - name: Build and tag Docker images
-    run:
+    run: |
       docker compose -f docker-compose.yml build
 
   - name: Tag & Push Backend image
-    run:
+    run: |
       docker tag todo101-todo-backend chaiyapat4826/todo-backend:latest
       docker push chaiyapat4826/todo-backend:latest
 
   - name: Tag & Push Backend image
-    run:
+    run: |
       docker tag todo101-todo-frontend chaiyapat4826/todo-frontend:latest
       docker push chaiyapat4826/todo-frontend:latest
